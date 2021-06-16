@@ -54,15 +54,6 @@ def predict():
     return render_template('predict.html')
 
 
-# In[6]:
-
-
-@app.route('/<page_name>')
-def other_page(page_name):
-    response = make_response(render_template('404.html'), 404)
-    return response
-
-
 # In[ ]:
 
 
