@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         pip install -r requirements.txt
-    - name: Set up MySQL 5.7
+    - name: Set up MySQL 8.0
       uses: Cibhibaskar/Bank-Performance-Dashboard@main
       with:
         mysql version: 8.0
