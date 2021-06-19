@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Term Deposit</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/jpg" href="{{ url_for('static',filename='images/icons/bank.jpg')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css')}}">
+<!--===============================================================================================-->
+</head>
+<body>
+	{% extends 'layout.html' %}
+	{% block content %}
+
+	    <div class="container-contact100">
+			<form action="/predict" method="POST">
+				<div class="wrap-contact100">
+					<span class="contact100-form-title">
+						Term Deposit
+					</span>
+						<div class="wrap-input100 validate-input" data-validate="Name is required">
+							<span class="label-input100"></span>
+							<input class="input100" type="text" name="Age" placeholder="Age">
+							<span class="focus-input100"></span>
+						</div>
+
+					<div class="wrap-input100 input100-select">
+						<span class="label-input100">#1</span>
+						<div>
+							<select class="selection-2 select2-hidden-accessible" name="#1" tabindex="-1" aria-hidden="true">
+								<option value="0">1</option>
+								<option value="1">2</option>
+							</select>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 input100-select">
+						<span class="label-input100">#2</span>
+						<div>
+							<select class="selection-2 select2-hidden-accessible" name="#2" tabindex="-1" aria-hidden="true">
+								<option value="0">#2</option> 
+						        <option value="1">Australia</option> 
+						        <option value="2">Bangladesh</option> 
+						        <option value="3">England</option> 
+						        <option value="4">Ireland</option> 
+						        <option value="5">Netherlands</option> 
+						        <option value="6">New Zealand</option> 
+						        <option value="7">Pakistan</option> 
+						        <option value="8">South Africa</option> 
+						        <option value="9">Sri Lanka</option> 
+						        <option value="10">U.A.E.</option> 
+						        <option value="11">West Indies</option> 
+						        <option value="12">Zimbabwe</option>
+							</select>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 input100-select">
+						<span class="label-input100">#3</span>
+						<div>
+							<select class="selection-2 select2-hidden-accessible" name="#3" tabindex="-1" aria-hidden="true">
+								<option value="0">#3</option> 
+							    <option value="1">Ahmedabad</option> 
+							    <option value="2">Auckland</option> 
+							    <option value="3">Bengaluru</option> 
+							    <option value="4">Birmingham</option> 
+							    <option value="5">Brisbane</option>
+							    <option value="6">Bristol</option> 
+							    <option value="7">Bulawayo</option> 
+							    <option value="8">Canberra</option> 
+							    <option value="9">Cape Town</option> 
+							    <option value="10">Cardiff</option> 
+							    <option value="11">Centurion</option> 
+							    <option value="12">Chennai</option> 
+							    <option value="13">Chester-le-Street</option> 
+							    <option value="14">Colombo (RPS)</option> 
+							    <option value="15">Cuttack</option> 
+							    <option value="16">Dambulla</option> 
+							    <option value="17">Delhi</option> 
+							    <option value="18">Dhaka</option> 
+							    <option value="19">Dharamsala</option> 
+							    <option value="20">Dublin (Malahide)</option>
+							    <option value="21">Durban</option> 
+							    <option value="22">Fatullah</option> 
+							    <option value="23">Guwahati</option> 
+							    <option value="24">Hambantota</option> 
+							    <option value="25">Hamilton</option> 
+							    <option value="26">Harare</option> 
+							    <option value="27">Hobart</option> 
+							    <option value="28">Hyderabad (Deccan)</option> 
+							    <option value="29">Indore</option> 
+							    <option value="30">Jaipur</option> 
+							    <option value="31">Johannesburg</option> 
+							    <option value="32">Kanpur</option> 
+							    <option value="33">Kingston</option> 
+							    <option value="34">Kochi</option> 
+							    <option value="35">Kolkata</option> 
+							    <option value="36">Lauderhill</option>
+							    <option value="37">Leeds</option> 
+							    <option value="38">Lord's</option> 
+							    <option value="39">Manchester</option> 
+							    <option value="40">Melbourne</option> 
+							    <option value="41">Mohali</option> 
+							    <option value="42">Mount Maunganui</option> 
+							    <option value="43">Mumbai</option> 
+							    <option value="44">Mumbai (BS)</option> 
+							    <option value="45">Nagpur</option> 
+							    <option value="46">Napier</option> 
+							    <option value="47">North Sound</option> 
+							    <option value="48">Nottingham</option> 
+							    <option value="49">Pallekele</option> 
+							    <option value="50">Perth</option> 
+							    <option value="51">Port Elizabeth</option> 
+							    <option value="52">Port of Spain</option> 
+							    <option value="53">Providence</option>
+							    <option value="54">Pune</option> 
+							    <option value="55">Rajkot</option> 
+							    <option value="56">Ranchi</option> 
+							    <option value="57">Southampton</option> 
+							    <option value="58">Sydney</option> 
+							    <option value="59">The Oval</option> 
+							    <option value="60">Thiruvananthapuram</option> 
+							    <option value="61">Vadodara</option> 
+							    <option value="62">Visakhapatnam</option> 
+							    <option value="63">Wellington</option>
+							</select>
+						</div>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="container-contact100-form-btn">
+						<div class="wrap-contact100-form-btn">
+							<div class="contact100-form-bgbtn"></div>
+							<button class="contact100-form-btn">
+								<span>
+									Predict Deposit
+									<!-- <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i> -->
+								</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+	</div>
+	
+	{% endblock %}
+
+	<div id="dropDownSelect1"></div>
+  
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{ url_for('static',filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/select2/select2.min.js')}}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='vendor/daterangepicker/daterangepicker.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='js/main.js')}}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        #button1{
+            width: 300px;
+            height: 20px;
+            display: inline-block;
+        }
+        #button2{
+            width: 300px;
+            height: 20px;
+            display: inline-block;
+        }
+        #button3{
+            width: 300px;
+            height: 20px;
+            display: inline-block;
+        }
+        .container{
+            text-align: center;
+            padding: 1px;
+        }
+    </style>
+        <meta charset="utf-8">
+    </head>
+    <body class="loggedin">
+        <nav class="navtop">
+            
+            <div class="container">
+                <button id="button1">
+                    <p><a class="contact200-form-btn" href="{{ url_for('home') }}">Home</a></p>
+                </button>
+                <button id="button2">
+                    <p><a class="contact200-form-btn" href="{{ url_for('dashboard') }}">KPI Dashboard</a></p>
+                </button>
+                <button id="button3">
+                    <p><a class="contact200-form-btn" href="{{ url_for('predict') }}">Term Deposit Prediction</a></p>
+                </button>
+            </div>
+        </nav>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>
