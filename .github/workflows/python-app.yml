@@ -23,6 +23,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         pip install -r requirements.txt
+    - name: Set up MySQL 5.7
+      uses: Cibhibaskar/Bank-Performance-Dashboard@main
+      with:
+        mysql version: 8.0
+        mysql database: bank
+        mysql root password: ${{ secrets.DatabasePassword }}
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
