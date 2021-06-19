@@ -24,7 +24,7 @@ jobs:
         pip install flake8 pytest
         pip install -r requirements.txt
     - name: Set up MySQL 8.0
-      uses: Cibhibaskar/Bank-Performance-Dashboard@main
+      uses: CibhiBaskar/Bank-Performance-Dashboard@main
       with:
         branch: develop
         mysql version: 8.0
