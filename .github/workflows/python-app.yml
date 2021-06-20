@@ -27,6 +27,7 @@ jobs:
        run: |
         sudo /etc/init.d/mysql start
         mysql --protocol tcp -h 127.0.0.1 --port 3306 -u root -pAppu@05022000 -e 'CREATE DATABASE IF NOT EXISTS test;'
+        mysql> grant all privileges on *.* to root@127.0.0.1 identified by 'pass' with grant option;
     
      - uses: actions/checkout@v2
      - name: Set up Python 3.9
