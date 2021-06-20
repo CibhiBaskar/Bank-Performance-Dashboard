@@ -22,7 +22,7 @@ app.secret_key = 'performancedashboard'
 # Database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Appu@05022000'
+app.config['MYSQL_PASSWORD'] = 'Password!'
 app.config['MYSQL_DB'] = 'bank'
 
 # Intialize MySQL
