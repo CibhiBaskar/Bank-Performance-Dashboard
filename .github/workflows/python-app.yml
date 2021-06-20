@@ -10,41 +10,25 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-    
-    services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: Password!
-          MYSQL_DATABASE: bank
-        ports:
-            - '8888:3306'
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
-    steps:
-     - uses: actions/checkout@v1
-     - name: Set up MySQL
-       run: |
-        sudo /etc/init.d/mysql start
-        mysql -h "127.0.0.1" --port 8888 -u root -pPassword! -e 'CREATE DATABASE IF NOT EXISTS bank;'
-    
-     - uses: actions/checkout@v2
-     - name: Set up Python 3.9
-       uses: actions/setup-python@v2
-       with:
-        python-version: 3.9
+    runs-on: windows-latest
 
-     - name: Install dependencies
-       run: |
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
         pip install -r requirements.txt
-     - name: Lint with flake8
-       run: |
+    - name: Lint with flake8
+      run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-     - name: Test with pytest
-       run: |
+    - name: Test with pytest
+      run: |
         pytest
