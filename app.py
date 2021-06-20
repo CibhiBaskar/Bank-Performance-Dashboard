@@ -20,9 +20,9 @@ app = Flask(__name__)
 app.secret_key = 'performancedashboard'
 
 # Database connection details below
-app.config['MYSQL_HOST'] = '127.0.0.1'
+app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = '12345'
 app.config['MYSQL_DB'] = 'bank'
 app.config['MYSQL_PORT'] = 3306
 
