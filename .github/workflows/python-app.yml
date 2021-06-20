@@ -21,7 +21,7 @@ jobs:
     container:
       image: node:14.5.0-alpine
     services:
-      mysql-master:
+      localhost:
         image: mysql:8.0
         ports:
           - 3306/tcp
