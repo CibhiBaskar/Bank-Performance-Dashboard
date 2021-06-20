@@ -23,4 +23,4 @@ matplotlib
 pandas
 seaborn
 flask_mysqldb
-MySQLdb
+MySQLdb.cursors
