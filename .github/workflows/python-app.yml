@@ -16,17 +16,17 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: Appu@05022000
+          MYSQL_ROOT_PASSWORD: Password!
           MYSQL_DATABASE: bank
         ports:
-            - '3306'
+            - '8888:3306'
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     steps:
      - uses: actions/checkout@v1
      - name: Set up MySQL
        run: |
         sudo /etc/init.d/mysql start
-        mysql -h 127.0.0.1 --port 3306 -u root -pPassword! -e 'CREATE DATABASE IF NOT EXISTS test;'
+        mysql -h "127.0.0.1" --port 8888 -u root -pPassword! -e 'CREATE DATABASE IF NOT EXISTS bank;'
     
      - uses: actions/checkout@v2
      - name: Set up Python 3.9
