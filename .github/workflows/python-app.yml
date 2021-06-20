@@ -23,7 +23,7 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     steps:
      - uses: actions/checkout@v1
-     - run: mysql -h 127.0.0.1 --port 3306 -u root -pAppu@05022000 -e 'CREATE DATABASE IF NOT EXISTS test;'
+     - run: mysql -h localhost --port 3306 -u root -pAppu@05022000 -e 'CREATE DATABASE IF NOT EXISTS test;'
     
      - uses: actions/checkout@v2
      - name: Set up Python 3.9
