@@ -20,7 +20,7 @@ jobs:
           MYSQL_DATABASE: bank
         ports:
             - '8888:3306'
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     steps:
      - uses: actions/checkout@v1
      - run: mysql -h 127.0.0.1 --port 3306 -u root -pAppu@05022000 -e 'CREATE DATABASE IF NOT EXISTS test;'
