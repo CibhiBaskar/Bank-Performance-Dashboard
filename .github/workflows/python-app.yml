@@ -4,11 +4,10 @@
 name: Python application
 
 env:
-  MYSQL_DATABASE: bank
-  MYSQL_USER: root
-  MYSQL_PASSWORD: Appu@05022000
-  MYSQL_HOST: localhost
-  NODE_ENV: test
+    MYSQL_USER: laravel_user
+    MYSQL_PASSWORD: laravel_pass
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: laravel_db
 
 on:
   push:
@@ -22,7 +21,7 @@ jobs:
       image: node:14.5.0-alpine
     services:
       mysql:
-        image: mysql:8.0
+        image: mysql:8
         env:
           MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
           MYSQL_USER: ${{ env.MYSQL_USER }}
