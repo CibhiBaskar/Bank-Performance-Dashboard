@@ -14,7 +14,7 @@ class BasicTestCase(unittest.TestCase):
     
     def test_dashboard_page_content(self):
         tester = app.test_client(self)
-        response = tester.get('/dashboard','/predict', content_type='html/text')
+        response = tester.get('/dashboard', content_type='html/text')
         self.assertEqual(response.status_code, 200)
     
     def test_predict_page_content(self):
