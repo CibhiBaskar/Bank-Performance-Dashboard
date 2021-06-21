@@ -12,15 +12,14 @@
 
 <body>
   <center><img src="{{ url_for('static',filename='images/logo.png')}}" alt="logo" width="250" height="30"/></center>
-  <section class="hero is-info is-fullheight">
+  <section class="hero is-info is-fullheight" style="background-color: #ffffb5;background-image: linear-gradient(315deg, #ffffb5 0%, #247ba0 74%)";>
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-half">
-            <p class="contact300-form-title">Please Login</p>
             <form action="{{ url_for('login') }}" method="POST">
               <div class="field">
-                <label class="label">Username</label>
+                <label class="label" style="color: black;">Username</label>
                 <div class="control has-icons-left has-icons-right">
                   <input class="input" type="text" name="username" placeholder="Username" id="username" required>
                   <span class="icon is-small is-left">
@@ -29,7 +28,7 @@
                 </div>
               </div>
               <div class="field">
-                <label class="label">Password</label>
+                <label class="label" style="color: black;">Password</label>
                 <p class="control has-icons-left">
                   <input class="input" type="password" name="password" placeholder="Password" id="password" required>
                   <span class="icon is-small is-left">
@@ -39,8 +38,7 @@
               </div>
               <div class="field">
                 <p class="control">
-                  <div class="msg">{{ msg }}</div>
-                  <button type="submit" class="button is-success">
+                  <button type="submit" class="button is-success" style="background-color: black;">
                     Login
                   </button>
                 </p>
