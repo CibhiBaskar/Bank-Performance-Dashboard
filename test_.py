@@ -14,7 +14,7 @@ class BasicTestCase(unittest.TestCase):
         
     def test_home(self):
         tester = app.test_client(self)
-        pages = ['/', 'dashboard']
+        pages = ['/', 'dashboard', 'predict']
         for page in pages:
             response = tester.get(page, content_type='html/text')
             self.assertEqual(response.status_code, 200)
@@ -26,6 +26,16 @@ class BasicTestCase(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get('/', content_type='html/text')
         self.assertTrue(b'Login' in response.data)
+        
+    # Ensure login behaves correctly given correct credentials
+    
+    def test_correct_login(self):
+        tester = app.test_client(self)
+        response = tester.post('/',
+                               data=dict(username="Cibhi", password="cibhi123"),
+                               follow_redirects=True
+                              )
+        self.assertIn(b'Welcome back, Cibhi!', response.data)
         
     # Ensure login behaves correctly given wrong credentials
     
