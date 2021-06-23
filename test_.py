@@ -27,16 +27,6 @@ class BasicTestCase(unittest.TestCase):
         response = tester.get('/', content_type='html/text')
         self.assertTrue(b'Login' in response.data)
         
-    # Ensure login behaves correctly given correct credentials
-    
-    def test_correct_login(self):
-        tester = app.test_client(self)
-        response = tester.post('/',
-                               data=dict(username="Cibhi", password="cibhi123"),
-                               follow_redirects=True
-                              )
-        self.assertIn(b'Welcome back, Cibhi!', response.data)
-        
     # Ensure login behaves correctly given wrong credentials
     
     def test_wrong_login(self):
