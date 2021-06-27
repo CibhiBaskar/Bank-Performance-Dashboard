@@ -32,7 +32,7 @@ class BasicTestCase(unittest.TestCase):
     def test_correct_login(self):
         tester = app.test_client(self)
         response = tester.post('/',
-                               data=dict(username="Cibhi", password="cibhi12345"),
+                               data=dict(username="Cibhi", password="cibhi123"),
                                follow_redirects=True
                               )
         self.assertIn(b'Welcome back, Cibhi!', response.data)
