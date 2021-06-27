@@ -19,10 +19,11 @@ app = Flask(__name__)
 # Secret key (security)
 app.secret_key = 'performancedashboard'
 
-app.config['MYSQL_USER'] = 'sql3420283'
-app.config['MYSQL_PASSWORD'] = 'Blcmsczqtr'
-app.config['MYSQL_HOST'] = 'sql3.freemysqlhosting.net'
-app.config['MYSQL_DB'] = 'sql3420283'
+app.config['MYSQL_USER'] = 'sql4421674'
+app.config['MYSQL_PASSWORD'] = 'J5NwZ4R8xY'
+app.config['MYSQL_HOST'] = 'sql4.freemysqlhosting.net'
+app.config['MYSQL_DB'] = 'sql4421674'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
@@ -41,7 +42,7 @@ def login():
         password = request.form['password']
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM example WHERE username = %s AND password = %s', (username, password))
+        cursor.execute('SELECT * FROM executives WHERE username = %s AND password = %s', (username, password))
         # Fetch one record and return result
         account = cursor.fetchone()
         # If account exists in accounts table in out database
@@ -87,13 +88,13 @@ def password():
         
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor()
-        cursor.execute('SELECT * FROM example WHERE username = %s AND password = %s', (username, password))
+        cursor.execute('SELECT * FROM executives WHERE username = %s AND password = %s', (username, password))
         
         account = cursor.fetchone()
         
         # If account exists in accounts table in out database
         if account:
-            cursor.execute('UPDATE example SET password = %s  WHERE username = %s', (newpassword, username))
+            cursor.execute('UPDATE executives SET password = %s  WHERE username = %s', (newpassword, username))
             mysql.connection.commit()
             return redirect(url_for('login'))
         else:
@@ -118,36 +119,13 @@ def logout():
 # In[7]:
 
 
-@app.route('/dashboard', methods=['GET', 'POST'])
+@app.route('/dashboard')
 def dashboard():
-    if request.method == 'POST':
-        # do stuff when the form is submitted
-
-        # redirect to end the POST handling
-        # the redirect can be to the same route or somewhere else
-        return redirect(url_for('home'))
-
     # show the form, it wasn't submitted
     return render_template('dashboard.html')
 
 
-# In[8]:
-
-
-@app.route('/predict', methods=['GET', 'POST'])
-def predict():
-    if request.method == 'POST':
-        # do stuff when the form is submitted
-
-        # redirect to end the POST handling
-        # the redirect can be to the same route or somewhere else
-        return redirect(url_for('home'))
-
-    # show the form, it wasn't submitted
-    return render_template('predict.html')
-
-
-# In[9]:
+# In[ ]:
 
 
 if __name__ == "__main__":
